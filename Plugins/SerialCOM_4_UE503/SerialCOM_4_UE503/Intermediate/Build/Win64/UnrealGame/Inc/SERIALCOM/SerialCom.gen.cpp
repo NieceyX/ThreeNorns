@@ -6,10 +6,6 @@
 
 #include "UObject/GeneratedCppIncludes.h"
 #include "SERIALCOM/Public/SerialCom.h"
-#ifdef _MSC_VER
-#pragma warning (push)
-#pragma warning (disable : 4883)
-#endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 // Cross Module References
@@ -19,68 +15,67 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 	SERIALCOM_API UClass* Z_Construct_UClass_USerialCom();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UObject();
 // End Cross Module References
+	static FEnumRegistrationInfo Z_Registration_Info_UEnum_ELineEnd;
 	static UEnum* ELineEnd_StaticEnum()
 	{
-		static UEnum* Singleton = nullptr;
-		if (!Singleton)
+		if (!Z_Registration_Info_UEnum_ELineEnd.OuterSingleton)
 		{
-			Singleton = GetStaticEnum(Z_Construct_UEnum_SERIALCOM_ELineEnd, Z_Construct_UPackage__Script_SERIALCOM(), TEXT("ELineEnd"));
+			Z_Registration_Info_UEnum_ELineEnd.OuterSingleton = GetStaticEnum(Z_Construct_UEnum_SERIALCOM_ELineEnd, Z_Construct_UPackage__Script_SERIALCOM(), TEXT("ELineEnd"));
 		}
-		return Singleton;
+		return Z_Registration_Info_UEnum_ELineEnd.OuterSingleton;
 	}
 	template<> SERIALCOM_API UEnum* StaticEnum<ELineEnd>()
 	{
 		return ELineEnd_StaticEnum();
 	}
-	static FCompiledInDeferEnum Z_CompiledInDeferEnum_UEnum_ELineEnd(ELineEnd_StaticEnum, TEXT("/Script/SERIALCOM"), TEXT("ELineEnd"), false, nullptr, nullptr);
-	uint32 Get_Z_Construct_UEnum_SERIALCOM_ELineEnd_Hash() { return 1581554014U; }
+	struct Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics
+	{
+		static const UECodeGen_Private::FEnumeratorParam Enumerators[];
+#if WITH_METADATA
+		static const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[];
+#endif
+		static const UECodeGen_Private::FEnumParams EnumParams;
+	};
+	const UECodeGen_Private::FEnumeratorParam Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enumerators[] = {
+		{ "ELineEnd::rn", (int64)ELineEnd::rn },
+		{ "ELineEnd::n", (int64)ELineEnd::n },
+		{ "ELineEnd::r", (int64)ELineEnd::r },
+		{ "ELineEnd::nr", (int64)ELineEnd::nr },
+	};
+#if WITH_METADATA
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enum_MetaDataParams[] = {
+		{ "BlueprintType", "true" },
+		{ "Category", "Communication Serial" },
+		{ "ModuleRelativePath", "Public/SerialCom.h" },
+		{ "n.DisplayName", "\\n" },
+		{ "n.Name", "ELineEnd::n" },
+		{ "nr.DisplayName", "\\n\\r" },
+		{ "nr.Name", "ELineEnd::nr" },
+		{ "r.DisplayName", "\\r" },
+		{ "r.Name", "ELineEnd::r" },
+		{ "rn.DisplayName", "\\r\\n" },
+		{ "rn.Name", "ELineEnd::rn" },
+	};
+#endif
+	const UECodeGen_Private::FEnumParams Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::EnumParams = {
+		(UObject*(*)())Z_Construct_UPackage__Script_SERIALCOM,
+		nullptr,
+		"ELineEnd",
+		"ELineEnd",
+		Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enumerators,
+		UE_ARRAY_COUNT(Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enumerators),
+		RF_Public|RF_Transient|RF_MarkAsNative,
+		EEnumFlags::None,
+		(uint8)UEnum::ECppForm::EnumClass,
+		METADATA_PARAMS(Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enum_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::Enum_MetaDataParams))
+	};
 	UEnum* Z_Construct_UEnum_SERIALCOM_ELineEnd()
 	{
-#if WITH_HOT_RELOAD
-		UPackage* Outer = Z_Construct_UPackage__Script_SERIALCOM();
-		static UEnum* ReturnEnum = FindExistingEnumIfHotReloadOrDynamic(Outer, TEXT("ELineEnd"), 0, Get_Z_Construct_UEnum_SERIALCOM_ELineEnd_Hash(), false);
-#else
-		static UEnum* ReturnEnum = nullptr;
-#endif // WITH_HOT_RELOAD
-		if (!ReturnEnum)
+		if (!Z_Registration_Info_UEnum_ELineEnd.InnerSingleton)
 		{
-			static const UECodeGen_Private::FEnumeratorParam Enumerators[] = {
-				{ "ELineEnd::rn", (int64)ELineEnd::rn },
-				{ "ELineEnd::n", (int64)ELineEnd::n },
-				{ "ELineEnd::r", (int64)ELineEnd::r },
-				{ "ELineEnd::nr", (int64)ELineEnd::nr },
-			};
-#if WITH_METADATA
-			const UECodeGen_Private::FMetaDataPairParam Enum_MetaDataParams[] = {
-				{ "BlueprintType", "true" },
-				{ "Category", "Communication Serial" },
-				{ "ModuleRelativePath", "Public/SerialCom.h" },
-				{ "n.DisplayName", "\\n" },
-				{ "n.Name", "ELineEnd::n" },
-				{ "nr.DisplayName", "\\n\\r" },
-				{ "nr.Name", "ELineEnd::nr" },
-				{ "r.DisplayName", "\\r" },
-				{ "r.Name", "ELineEnd::r" },
-				{ "rn.DisplayName", "\\r\\n" },
-				{ "rn.Name", "ELineEnd::rn" },
-			};
-#endif
-			static const UECodeGen_Private::FEnumParams EnumParams = {
-				(UObject*(*)())Z_Construct_UPackage__Script_SERIALCOM,
-				nullptr,
-				"ELineEnd",
-				"ELineEnd",
-				Enumerators,
-				UE_ARRAY_COUNT(Enumerators),
-				RF_Public|RF_Transient|RF_MarkAsNative,
-				EEnumFlags::None,
-				UECodeGen_Private::EDynamicType::NotDynamic,
-				(uint8)UEnum::ECppForm::EnumClass,
-				METADATA_PARAMS(Enum_MetaDataParams, UE_ARRAY_COUNT(Enum_MetaDataParams))
-			};
-			UECodeGen_Private::ConstructUEnum(ReturnEnum, EnumParams);
+			UECodeGen_Private::ConstructUEnum(Z_Registration_Info_UEnum_ELineEnd.InnerSingleton, Z_Construct_UEnum_SERIALCOM_ELineEnd_Statics::EnumParams);
 		}
-		return ReturnEnum;
+		return Z_Registration_Info_UEnum_ELineEnd.InnerSingleton;
 	}
 	DEFINE_FUNCTION(USerialCom::execLineEndToStr)
 	{
@@ -352,13 +347,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Utility function to convert 4 bytes into a float. If the input array's length is not 4, returns 0.0.\n\n@param Bytes A byte array with 4 values representing the float in IEEE 754 standard format.\n@return The final float value or 0.0 for an invalid array." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "BytesToFloat", nullptr, nullptr, sizeof(SerialCom_eventBytesToFloat_Parms), Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "BytesToFloat", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::SerialCom_eventBytesToFloat_Parms), Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_BytesToFloat()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_BytesToFloat_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -396,13 +391,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Utility function to convert 4 bytes into an Integer. If the input array's length is not 4, returns 0.\n\n@param Bytes A byte array with 4 values representing the integer in little-endian format.\n@return The final integer value or 0 for an invalid array.\n        //////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_BytesToInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "BytesToInt", nullptr, nullptr, sizeof(SerialCom_eventBytesToInt_Parms), Z_Construct_UFunction_USerialCom_BytesToInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_BytesToInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "BytesToInt", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::SerialCom_eventBytesToInt_Parms), Z_Construct_UFunction_USerialCom_BytesToInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14022401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_BytesToInt_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_BytesToInt()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_BytesToInt_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_BytesToInt_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -429,7 +424,7 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_Close_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_Close_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -475,13 +470,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Utility function to get the 4 bytes that make a float.\n\n@param Float The float value to be converted.\n@return A byte array containing the 4 bytes that make the float, in IEEE 754 standard format." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "FloatToBytes", nullptr, nullptr, sizeof(SerialCom_eventFloatToBytes_Parms), Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "FloatToBytes", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::SerialCom_eventFloatToBytes_Parms), Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_FloatToBytes()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_FloatToBytes_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -507,7 +502,7 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_Flush_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_Flush_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -537,13 +532,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Read the selected BaudRate for this Serial instance.\n@return The baud rate." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_GetBaud_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "GetBaud", nullptr, nullptr, sizeof(SerialCom_eventGetBaud_Parms), Z_Construct_UFunction_USerialCom_GetBaud_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetBaud_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_GetBaud_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetBaud_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_GetBaud_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "GetBaud", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_GetBaud_Statics::SerialCom_eventGetBaud_Parms), Z_Construct_UFunction_USerialCom_GetBaud_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetBaud_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_GetBaud_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetBaud_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_GetBaud()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_GetBaud_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_GetBaud_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -573,13 +568,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Read the number of the serial port selected for this Serial instance.\n@return The number of the serial port." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_GetPort_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "GetPort", nullptr, nullptr, sizeof(SerialCom_eventGetPort_Parms), Z_Construct_UFunction_USerialCom_GetPort_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetPort_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_GetPort_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetPort_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_GetPort_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "GetPort", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_GetPort_Statics::SerialCom_eventGetPort_Parms), Z_Construct_UFunction_USerialCom_GetPort_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetPort_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_GetPort_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_GetPort_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_GetPort()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_GetPort_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_GetPort_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -625,13 +620,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Utility function to get the 4 bytes that make an integer.\n\n@param Int The integer value to be converted.\n@return A byte array containing the 4 bytes that make the integer, starting from the least significant one (little endian)." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_IntToBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "IntToBytes", nullptr, nullptr, sizeof(SerialCom_eventIntToBytes_Parms), Z_Construct_UFunction_USerialCom_IntToBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_IntToBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "IntToBytes", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::SerialCom_eventIntToBytes_Parms), Z_Construct_UFunction_USerialCom_IntToBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IntToBytes_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_IntToBytes()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_IntToBytes_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_IntToBytes_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -666,13 +661,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Check if the serial port is open.\n@return True if the serial port is open." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_IsOpened_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "IsOpened", nullptr, nullptr, sizeof(SerialCom_eventIsOpened_Parms), Z_Construct_UFunction_USerialCom_IsOpened_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IsOpened_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_IsOpened_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IsOpened_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_IsOpened_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "IsOpened", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_IsOpened_Statics::SerialCom_eventIsOpened_Parms), Z_Construct_UFunction_USerialCom_IsOpened_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IsOpened_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_IsOpened_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_IsOpened_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_IsOpened()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_IsOpened_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_IsOpened_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -693,7 +688,7 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		static const UECodeGen_Private::FFunctionParams FuncParams;
 	};
 	const UECodeGen_Private::FBytePropertyParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::NewProp_LineEnd_Underlying = { "UnderlyingType", nullptr, (EPropertyFlags)0x0000000000000000, UECodeGen_Private::EPropertyGenFlags::Byte, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, nullptr, METADATA_PARAMS(nullptr, 0) };
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::NewProp_LineEnd = { "LineEnd", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SerialCom_eventLineEndToStr_Parms, LineEnd), Z_Construct_UEnum_SERIALCOM_ELineEnd, METADATA_PARAMS(nullptr, 0) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::NewProp_LineEnd = { "LineEnd", nullptr, (EPropertyFlags)0x0010000000000080, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SerialCom_eventLineEndToStr_Parms, LineEnd), Z_Construct_UEnum_SERIALCOM_ELineEnd, METADATA_PARAMS(nullptr, 0) }; // 2550199206
 	const UECodeGen_Private::FStrPropertyParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Str, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(SerialCom_eventLineEndToStr_Parms, ReturnValue), METADATA_PARAMS(nullptr, 0) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::NewProp_LineEnd_Underlying,
@@ -710,13 +705,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Converts a LineEnd enum value to String.\n@param LineEnd LineEnd enum value.\n@return The LineEnd value in string format." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "LineEndToStr", nullptr, nullptr, sizeof(SerialCom_eventLineEndToStr_Parms), Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "LineEndToStr", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::SerialCom_eventLineEndToStr_Parms), Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_LineEndToStr()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_LineEndToStr_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -766,13 +761,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Utility function to convert 4 bytes into an Integer. If the input array's length is not 4, returns 0.\n\n@param Bytes A byte array with 4 values representing the integer in little-endian format.\n@return The final integer value or 0 for an invalid array.\n        //////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////\n//////////////////////////////////////////////////////////////////////////////////////" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenComPort_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenComPort", nullptr, nullptr, sizeof(SerialCom_eventOpenComPort_Parms), Z_Construct_UFunction_USerialCom_OpenComPort_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenComPort_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenComPort", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::SerialCom_eventOpenComPort_Parms), Z_Construct_UFunction_USerialCom_OpenComPort_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPort_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_OpenComPort()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_OpenComPort_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_OpenComPort_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -842,13 +837,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Open a serial port and return the created Serial instance.\nDon't forget to close the port before exiting the game.\n\n@param bOpened If the serial port was successfully opened.\n@param Port The serial port to open.\n@param BaudRate BaudRate to open the serial port with.\n@param DTR Enable/Disable DTR communication protocol.\n@param RTS Enable/Disable RTS communication protocol.\n@return A Serial instance to work with the opened port." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenComPortWithFlowControl", nullptr, nullptr, sizeof(SerialCom_eventOpenComPortWithFlowControl_Parms), Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenComPortWithFlowControl", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::SerialCom_eventOpenComPortWithFlowControl_Parms), Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04422401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -913,13 +908,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ModuleRelativePath", "Public/SerialCom.h" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenWFC_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenWFC", nullptr, nullptr, sizeof(SerialCom_eventOpenWFC_Parms), Z_Construct_UFunction_USerialCom_OpenWFC_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_OpenWFC_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "OpenWFC", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::SerialCom_eventOpenWFC_Parms), Z_Construct_UFunction_USerialCom_OpenWFC_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_OpenWFC_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_OpenWFC()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_OpenWFC_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_OpenWFC_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -959,13 +954,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes a string without newline to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Print_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Print", nullptr, nullptr, sizeof(SerialCom_eventPrint_Parms), Z_Construct_UFunction_USerialCom_Print_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Print_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Print_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Print_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Print_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Print", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_Print_Statics::SerialCom_eventPrint_Parms), Z_Construct_UFunction_USerialCom_Print_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Print_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Print_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Print_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_Print()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_Print_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_Print_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1005,13 +1000,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes a string with newline (\\n) appended at the end to the serial port.\n@param String The string to be sent to the serial port.\n@return True if the string was sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Println_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Println", nullptr, nullptr, sizeof(SerialCom_eventPrintln_Parms), Z_Construct_UFunction_USerialCom_Println_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Println_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Println_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Println_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Println_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Println", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_Println_Statics::SerialCom_eventPrintln_Parms), Z_Construct_UFunction_USerialCom_Println_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Println_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Println_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Println_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_Println()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_Println_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_Println_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1051,13 +1046,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Reads a byte from the serial port.\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadByte_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadByte", nullptr, nullptr, sizeof(SerialCom_eventReadByte_Parms), Z_Construct_UFunction_USerialCom_ReadByte_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadByte_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadByte_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadByte_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadByte_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadByte", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_ReadByte_Statics::SerialCom_eventReadByte_Parms), Z_Construct_UFunction_USerialCom_ReadByte_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadByte_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadByte_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadByte_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_ReadByte()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_ReadByte_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_ReadByte_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1096,13 +1091,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Reads up to Limit bytes from the serial port. If there are less than Limit,\nreads all of them and return True.\n@param bSuccess True if there was at least 1 byte to read.\n@return An array containing the read bytes" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadBytes", nullptr, nullptr, sizeof(SerialCom_eventReadBytes_Parms), Z_Construct_UFunction_USerialCom_ReadBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadBytes", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::SerialCom_eventReadBytes_Parms), Z_Construct_UFunction_USerialCom_ReadBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadBytes_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_ReadBytes()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_ReadBytes_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_ReadBytes_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1142,13 +1137,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Reads a float from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadFloat", nullptr, nullptr, sizeof(SerialCom_eventReadFloat_Parms), Z_Construct_UFunction_USerialCom_ReadFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadFloat", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::SerialCom_eventReadFloat_Parms), Z_Construct_UFunction_USerialCom_ReadFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadFloat_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_ReadFloat()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_ReadFloat_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_ReadFloat_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1188,13 +1183,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Reads an integer from the serial port (sent as 4 bytes).\n@param bSuccess True if there were 4 bytes to read.\n@return The read value" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadInt", nullptr, nullptr, sizeof(SerialCom_eventReadInt_Parms), Z_Construct_UFunction_USerialCom_ReadInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadInt_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadInt", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_ReadInt_Statics::SerialCom_eventReadInt_Parms), Z_Construct_UFunction_USerialCom_ReadInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadInt_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_ReadInt()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_ReadInt_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_ReadInt_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1234,13 +1229,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Will read characters from Serial port until \\r\\n (Arduino println line end) is found.\n\n@param bSuccess If there was anything to read.\n@return The read string" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Readln_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Readln", nullptr, nullptr, sizeof(SerialCom_eventReadln_Parms), Z_Construct_UFunction_USerialCom_Readln_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Readln_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Readln_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Readln_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_Readln_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "Readln", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_Readln_Statics::SerialCom_eventReadln_Parms), Z_Construct_UFunction_USerialCom_Readln_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Readln_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_Readln_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_Readln_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_Readln()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_Readln_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_Readln_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1280,13 +1275,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Will read characters from Serial port until \\0 (null char) is found or there are no\ncharacters left to read.\n\n@param bSuccess If there was anything to read.\n@return The read string" },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadString_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadString", nullptr, nullptr, sizeof(SerialCom_eventReadString_Parms), Z_Construct_UFunction_USerialCom_ReadString_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadString_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadString_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadString_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_ReadString_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "ReadString", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_ReadString_Statics::SerialCom_eventReadString_Parms), Z_Construct_UFunction_USerialCom_ReadString_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadString_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04420401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_ReadString_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_ReadString_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_ReadString()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_ReadString_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_ReadString_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1326,13 +1321,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes a byte value to the serial port.\n@param Value The value to be sent to the serial port.\n@return True if the byte was sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteByte_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteByte", nullptr, nullptr, sizeof(SerialCom_eventWriteByte_Parms), Z_Construct_UFunction_USerialCom_WriteByte_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteByte_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteByte_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteByte_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteByte_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteByte", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_WriteByte_Statics::SerialCom_eventWriteByte_Parms), Z_Construct_UFunction_USerialCom_WriteByte_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteByte_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteByte_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteByte_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_WriteByte()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_WriteByte_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_WriteByte_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1375,13 +1370,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes a byte array as a sequence of bytes to the serial port.\n@param Buffer The byte array to be sent to the serial port.\n@return True if the bytes were sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteBytes", nullptr, nullptr, sizeof(SerialCom_eventWriteBytes_Parms), Z_Construct_UFunction_USerialCom_WriteBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteBytes_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteBytes", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::SerialCom_eventWriteBytes_Parms), Z_Construct_UFunction_USerialCom_WriteBytes_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteBytes_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_WriteBytes()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_WriteBytes_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_WriteBytes_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1421,13 +1416,13 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes a float value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteFloat", nullptr, nullptr, sizeof(SerialCom_eventWriteFloat_Parms), Z_Construct_UFunction_USerialCom_WriteFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteFloat_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteFloat", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::SerialCom_eventWriteFloat_Parms), Z_Construct_UFunction_USerialCom_WriteFloat_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteFloat_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_WriteFloat()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_WriteFloat_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_WriteFloat_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -1467,16 +1462,17 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Writes an integer value to the serial port as 4 bytes.\n@param Value The value to be sent to the serial port.\n@return True if the bytes were sent." },
 	};
 #endif
-	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteInt", nullptr, nullptr, sizeof(SerialCom_eventWriteInt_Parms), Z_Construct_UFunction_USerialCom_WriteInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteInt_Statics::Function_MetaDataParams)) };
+	const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_USerialCom_WriteInt_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_USerialCom, nullptr, "WriteInt", nullptr, nullptr, sizeof(Z_Construct_UFunction_USerialCom_WriteInt_Statics::SerialCom_eventWriteInt_Parms), Z_Construct_UFunction_USerialCom_WriteInt_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteInt_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_USerialCom_WriteInt_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_USerialCom_WriteInt_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_USerialCom_WriteInt()
 	{
 		static UFunction* ReturnFunction = nullptr;
 		if (!ReturnFunction)
 		{
-			UECodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_USerialCom_WriteInt_Statics::FuncParams);
+			UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_USerialCom_WriteInt_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
+	IMPLEMENT_CLASS_NO_AUTO_REGISTRATION(USerialCom);
 	UClass* Z_Construct_UClass_USerialCom_NoRegister()
 	{
 		return USerialCom::StaticClass();
@@ -1502,31 +1498,31 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_SERIALCOM,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_USerialCom_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_USerialCom_BytesToFloat, "BytesToFloat" }, // 2456232863
-		{ &Z_Construct_UFunction_USerialCom_BytesToInt, "BytesToInt" }, // 2281357699
-		{ &Z_Construct_UFunction_USerialCom_Close, "Close" }, // 2378115104
-		{ &Z_Construct_UFunction_USerialCom_FloatToBytes, "FloatToBytes" }, // 4210552233
-		{ &Z_Construct_UFunction_USerialCom_Flush, "Flush" }, // 1470713489
-		{ &Z_Construct_UFunction_USerialCom_GetBaud, "GetBaud" }, // 1525534636
-		{ &Z_Construct_UFunction_USerialCom_GetPort, "GetPort" }, // 1335995827
-		{ &Z_Construct_UFunction_USerialCom_IntToBytes, "IntToBytes" }, // 694195988
-		{ &Z_Construct_UFunction_USerialCom_IsOpened, "IsOpened" }, // 489915064
-		{ &Z_Construct_UFunction_USerialCom_LineEndToStr, "LineEndToStr" }, // 2321112378
-		{ &Z_Construct_UFunction_USerialCom_OpenComPort, "OpenComPort" }, // 1721441679
-		{ &Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl, "OpenComPortWithFlowControl" }, // 562872935
-		{ &Z_Construct_UFunction_USerialCom_OpenWFC, "OpenWFC" }, // 2983385132
-		{ &Z_Construct_UFunction_USerialCom_Print, "Print" }, // 505675539
-		{ &Z_Construct_UFunction_USerialCom_Println, "Println" }, // 911551021
-		{ &Z_Construct_UFunction_USerialCom_ReadByte, "ReadByte" }, // 2235204446
-		{ &Z_Construct_UFunction_USerialCom_ReadBytes, "ReadBytes" }, // 950937435
-		{ &Z_Construct_UFunction_USerialCom_ReadFloat, "ReadFloat" }, // 3574745581
-		{ &Z_Construct_UFunction_USerialCom_ReadInt, "ReadInt" }, // 1080739635
-		{ &Z_Construct_UFunction_USerialCom_Readln, "Readln" }, // 3850225884
-		{ &Z_Construct_UFunction_USerialCom_ReadString, "ReadString" }, // 1010997643
-		{ &Z_Construct_UFunction_USerialCom_WriteByte, "WriteByte" }, // 1069667916
-		{ &Z_Construct_UFunction_USerialCom_WriteBytes, "WriteBytes" }, // 3162753110
-		{ &Z_Construct_UFunction_USerialCom_WriteFloat, "WriteFloat" }, // 1806587087
-		{ &Z_Construct_UFunction_USerialCom_WriteInt, "WriteInt" }, // 1592574317
+		{ &Z_Construct_UFunction_USerialCom_BytesToFloat, "BytesToFloat" }, // 683714312
+		{ &Z_Construct_UFunction_USerialCom_BytesToInt, "BytesToInt" }, // 2899363765
+		{ &Z_Construct_UFunction_USerialCom_Close, "Close" }, // 4193384900
+		{ &Z_Construct_UFunction_USerialCom_FloatToBytes, "FloatToBytes" }, // 2897462068
+		{ &Z_Construct_UFunction_USerialCom_Flush, "Flush" }, // 1697551658
+		{ &Z_Construct_UFunction_USerialCom_GetBaud, "GetBaud" }, // 2965099398
+		{ &Z_Construct_UFunction_USerialCom_GetPort, "GetPort" }, // 4055885654
+		{ &Z_Construct_UFunction_USerialCom_IntToBytes, "IntToBytes" }, // 1772765289
+		{ &Z_Construct_UFunction_USerialCom_IsOpened, "IsOpened" }, // 3191318414
+		{ &Z_Construct_UFunction_USerialCom_LineEndToStr, "LineEndToStr" }, // 104769862
+		{ &Z_Construct_UFunction_USerialCom_OpenComPort, "OpenComPort" }, // 2006658551
+		{ &Z_Construct_UFunction_USerialCom_OpenComPortWithFlowControl, "OpenComPortWithFlowControl" }, // 4118894161
+		{ &Z_Construct_UFunction_USerialCom_OpenWFC, "OpenWFC" }, // 2509626826
+		{ &Z_Construct_UFunction_USerialCom_Print, "Print" }, // 1809381406
+		{ &Z_Construct_UFunction_USerialCom_Println, "Println" }, // 781390807
+		{ &Z_Construct_UFunction_USerialCom_ReadByte, "ReadByte" }, // 1598092136
+		{ &Z_Construct_UFunction_USerialCom_ReadBytes, "ReadBytes" }, // 3392177344
+		{ &Z_Construct_UFunction_USerialCom_ReadFloat, "ReadFloat" }, // 923044011
+		{ &Z_Construct_UFunction_USerialCom_ReadInt, "ReadInt" }, // 2936197197
+		{ &Z_Construct_UFunction_USerialCom_Readln, "Readln" }, // 1724799161
+		{ &Z_Construct_UFunction_USerialCom_ReadString, "ReadString" }, // 1822018165
+		{ &Z_Construct_UFunction_USerialCom_WriteByte, "WriteByte" }, // 2444177701
+		{ &Z_Construct_UFunction_USerialCom_WriteBytes, "WriteBytes" }, // 1419417112
+		{ &Z_Construct_UFunction_USerialCom_WriteFloat, "WriteFloat" }, // 1835495903
+		{ &Z_Construct_UFunction_USerialCom_WriteInt, "WriteInt" }, // 678699130
 	};
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_USerialCom_Statics::Class_MetaDataParams[] = {
@@ -1546,7 +1542,7 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 		{ "ToolTip", "Determines the line ending used when writing lines to serial port with PrintLine." },
 	};
 #endif
-	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd = { "WriteLineEnd", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USerialCom, WriteLineEnd), Z_Construct_UEnum_SERIALCOM_ELineEnd, METADATA_PARAMS(Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd_MetaData)) };
+	const UECodeGen_Private::FEnumPropertyParams Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd = { "WriteLineEnd", nullptr, (EPropertyFlags)0x0010000000000004, UECodeGen_Private::EPropertyGenFlags::Enum, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(USerialCom, WriteLineEnd), Z_Construct_UEnum_SERIALCOM_ELineEnd, METADATA_PARAMS(Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd_MetaData)) }; // 2550199206
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_USerialCom_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd_Underlying,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_USerialCom_Statics::NewProp_WriteLineEnd,
@@ -1571,21 +1567,30 @@ void EmptyLinkFunctionForGeneratedCodeSerialCom() {}
 	};
 	UClass* Z_Construct_UClass_USerialCom()
 	{
-		static UClass* OuterClass = nullptr;
-		if (!OuterClass)
+		if (!Z_Registration_Info_UClass_USerialCom.OuterSingleton)
 		{
-			UECodeGen_Private::ConstructUClass(OuterClass, Z_Construct_UClass_USerialCom_Statics::ClassParams);
+			UECodeGen_Private::ConstructUClass(Z_Registration_Info_UClass_USerialCom.OuterSingleton, Z_Construct_UClass_USerialCom_Statics::ClassParams);
 		}
-		return OuterClass;
+		return Z_Registration_Info_UClass_USerialCom.OuterSingleton;
 	}
-	IMPLEMENT_CLASS(USerialCom, 2321113090);
 	template<> SERIALCOM_API UClass* StaticClass<USerialCom>()
 	{
 		return USerialCom::StaticClass();
 	}
-	static FCompiledInDefer Z_CompiledInDefer_UClass_USerialCom(Z_Construct_UClass_USerialCom, &USerialCom::StaticClass, TEXT("/Script/SERIALCOM"), TEXT("USerialCom"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(USerialCom);
+	struct Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics
+	{
+		static const FEnumRegisterCompiledInInfo EnumInfo[];
+		static const FClassRegisterCompiledInInfo ClassInfo[];
+	};
+	const FEnumRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::EnumInfo[] = {
+		{ ELineEnd_StaticEnum, TEXT("ELineEnd"), &Z_Registration_Info_UEnum_ELineEnd, CONSTRUCT_RELOAD_VERSION_INFO(FEnumReloadVersionInfo, 2550199206U) },
+	};
+	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::ClassInfo[] = {
+		{ Z_Construct_UClass_USerialCom, USerialCom::StaticClass, TEXT("USerialCom"), &Z_Registration_Info_UClass_USerialCom, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(USerialCom), 1768922105U) },
+	};
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_3658659675(TEXT("/Script/SERIALCOM"),
+		Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::ClassInfo),
+		nullptr, 0,
+		Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::EnumInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_ThreeNorns_Plugins_SerialCOM_4_UE503_SerialCOM_4_UE503_Source_SERIALCOM_Public_SerialCom_h_Statics::EnumInfo));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-#ifdef _MSC_VER
-#pragma warning (pop)
-#endif

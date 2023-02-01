@@ -1,0 +1,17 @@
+{
+    "Version": "1.1",
+    "Data": {
+        "Source": "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\intermediate\\build\\win64\\unrealgame\\development\\serialcom\\module.serialcom.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "c:\\users\\u1428908\\documents\\github\\threenorns\\intermediate\\build\\win64\\threenorns\\development\\engine\\sharedpch.engine.shadowerrors.h.pch",
+        "Includes": [
+            "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\intermediate\\build\\win64\\unrealgame\\development\\serialcom\\definitions.serialcom.h",
+            "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\intermediate\\build\\win64\\unrealgame\\inc\\serialcom\\serialcom.gen.cpp",
+            "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\source\\serialcom\\public\\serialcom.h",
+            "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\intermediate\\build\\win64\\unrealgame\\inc\\serialcom\\serialcom.generated.h",
+            "c:\\users\\u1428908\\documents\\github\\threenorns\\plugins\\serialcom_4_ue503\\serialcom_4_ue503\\intermediate\\build\\win64\\unrealgame\\inc\\serialcom\\serialcom.init.gen.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

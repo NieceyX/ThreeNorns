@@ -5,31 +5,25 @@
 ===========================================================================*/
 
 #include "UObject/GeneratedCppIncludes.h"
-#ifdef _MSC_VER
-#pragma warning (push)
-#pragma warning (disable : 4883)
-#endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeSERIALCOM_init() {}
-	UPackage* Z_Construct_UPackage__Script_SERIALCOM()
+	static FPackageRegistrationInfo Z_Registration_Info_UPackage__Script_SERIALCOM;
+	FORCENOINLINE UPackage* Z_Construct_UPackage__Script_SERIALCOM()
 	{
-		static UPackage* ReturnPackage = nullptr;
-		if (!ReturnPackage)
+		if (!Z_Registration_Info_UPackage__Script_SERIALCOM.OuterSingleton)
 		{
 			static const UECodeGen_Private::FPackageParams PackageParams = {
 				"/Script/SERIALCOM",
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x2DC33C66,
+				0xF4ED8026,
 				0x27A0F7A7,
 				METADATA_PARAMS(nullptr, 0)
 			};
-			UECodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
+			UECodeGen_Private::ConstructUPackage(Z_Registration_Info_UPackage__Script_SERIALCOM.OuterSingleton, PackageParams);
 		}
-		return ReturnPackage;
+		return Z_Registration_Info_UPackage__Script_SERIALCOM.OuterSingleton;
 	}
+	static FRegisterCompiledInInfo Z_CompiledInDeferPackage_UPackage__Script_SERIALCOM(Z_Construct_UPackage__Script_SERIALCOM, TEXT("/Script/SERIALCOM"), Z_Registration_Info_UPackage__Script_SERIALCOM, CONSTRUCT_RELOAD_VERSION_INFO(FPackageReloadVersionInfo, 0xF4ED8026, 0x27A0F7A7));
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
-#ifdef _MSC_VER
-#pragma warning (pop)
-#endif
